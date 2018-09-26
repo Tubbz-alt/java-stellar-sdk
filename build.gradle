@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.6
-version = '0.3.2.3'
+version = '0.3.2.4'
 group = 'stellar'
 
 jar {
@@ -26,7 +26,7 @@ dependencies {
     compile 'com.moandjiezana.toml:toml4j:0.5.1'
     compile 'org.mockito:mockito-core:2.13.0'
     compile 'com.google.guava:guava:25.1-jre'
-    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.google.code.gson:gson:2.8.2'
     compile 'commons-io:commons-io:2.4'
     compile 'org.glassfish.jersey.core:jersey-client:2.22.1'
     compile 'org.glassfish.jersey.media:jersey-media-sse:2.22.1'
