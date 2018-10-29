@@ -79,7 +79,7 @@ public abstract class RequestBuilder {
     }
     return uriBuilder.build();
   }
-
+  
   /**
    * Represents possible <code>order</code> parameter values.
    */
