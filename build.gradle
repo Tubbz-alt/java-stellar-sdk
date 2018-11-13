@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.6
-version = '0.3.2.6'
+version = '0.3.2.7'
 group = 'stellar'
 
 jar {

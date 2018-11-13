@@ -45,7 +45,7 @@ public class TransactionDeserializer implements JsonDeserializer<TransactionResp
         BaseEncoding base64Encoding = BaseEncoding.base64();
         if (memoType.equals("id")) {
           BigInteger b = new BigInteger(memoValue);
-          if(b.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) == 1) {
+          if(b.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) == -1) {
             memo = Memo.id(b.longValue());
           } else {
             memo = Memo.text(memoValue);
