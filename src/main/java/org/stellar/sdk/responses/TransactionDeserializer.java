@@ -12,6 +12,7 @@ import org.stellar.sdk.KeyPair;
 import org.stellar.sdk.Memo;
 
 import java.lang.reflect.Type;
+import java.math.BigInteger;
 
 public class TransactionDeserializer implements JsonDeserializer<TransactionResponse> {
   @Override
@@ -43,7 +44,12 @@ public class TransactionDeserializer implements JsonDeserializer<TransactionResp
         String memoValue = json.getAsJsonObject().get("memo").getAsString();
         BaseEncoding base64Encoding = BaseEncoding.base64();
         if (memoType.equals("id")) {
-          memo = Memo.id(Long.parseLong(memoValue));
+          BigInteger b = new BigInteger(memoValue);
+          if(b.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) == 1) {
+            memo = Memo.id(b.longValue());
+          } else {
+            memo = Memo.text(memoValue);
+          }
         } else if (memoType.equals("hash")) {
           memo = Memo.hash(base64Encoding.decode(memoValue));
         } else if (memoType.equals("return")) {
