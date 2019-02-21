@@ -19,7 +19,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Represents <a href="https://www.stellar.org/developers/learn/concepts/transactions.html" target="_blank">Transaction</a> in Stellar network.
  */
 public class Transaction {
-  private static final int BASE_FEE = 100;
+  public static final int BASE_FEE = 50000;
 
   private final int mFee;
   private final KeyPair mSourceAccount;
